@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    	<!-- Required meta tags -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>Explore Myself Page</title>
+  </head>
+  <body>
+    
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!--css-->
+      <link rel="stylesheet" type="text/css" href="bootstap2 style.css">
+
+  
+</html>
+
+    <!--navigation bar-->
+    
+      
+   <nav class="navbar navbar-expand-lg "style="background-color: #098900;">
+        <div class="container-fluid">
+        	<a class="navbar-brand" href="#"style="color: whitesmoke;">Explore Myself</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+             <li class="nav-item">
+               <a class="nav-link active" aria-current="page" href="#"style="color: whitesmoke;">Home</a>
+             </li>
+             <li class="nav-item dropdown">
+               <a class="nav-link dropdown-toggle" href="#" style="color: whitesmoke;"id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                 Learn More
+               </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Login</a></li>
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><a class="dropdown-item" href="#"> About Us</a></li>
+                <li><a class="dropdown-item" href="#">Posts</a></li>
+              </ul>
+            	</li>     	
+     		 		</ul>
+            <form class="d-flex">
+              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" type="submit"style="background-color: black;">Search</button>
+            </form>
+         </div>
+         </div>
+   	</nav>
+
+  <!--Carousel-->
+
+        <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img src="https://intermountainhealthcare.org/-/media/images/modules/blog/posts/2018/05/exercise-motivation.jpg?la=en&h=504&w=896&mw=896&hash=ADDF0E0473F283E89AD282F64DEC263046A52510" class="d-block w-100"style="height: 540px; width: 80px;" alt="...">
+            <div class="carousel-caption d-none d-md-block">
+                <h1>Explore Yourself here!!</h1>
+                <h3>"Find, Support, learn, Encourage others, inspire and belong"</h3>
+            </div>
+            </div>
+
+        <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1612831817984-97e394106fff?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=725&q=80" class="d-block w-100"style="height: 540px; width: 80px;" alt="...">
+         <div class="carousel-caption d-none d-md-block">
+            <h1>Share Your story all over the world!</h1>
+            <h3>Connect with people, share your story and acvhievements...</h3>
+          </div>
+            </div>
+          <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=872&q=80" class="d-block w-100" style="height: 540px; width: 80px;"alt="...">
+          <div class="carousel-caption d-none d-md-block">
+             <h1>Get Job Opportunity!</h1>
+             <h3 style="color: yellow;">"Turn your Ideas into reality"</h3>
+         	</div>
+          </div>
+          </div>
+
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+
+<!--service offered-->
+
+		<section id="service_offered" class="container">
+			<h1 class="text-center">How it works</h1>
+			<hr>
+			<h4 class="text-center"> Explore Yourself is a user friendly platform for people with sucess stories,<br>
+                skillsets and experiences to share with explore yourself<br>
+                community and friends with their stories,inspirations, motivations and support.</h4>
+                <hr style="border: 1.5px black;"><br>
+		<div class="row">
+		<div class="col-sm-4 services_column">
+				<img src="https://cdn-icons.flaticon.com/png/512/3136/premium/3136102.png?token=exp=1646595674~hmac=27abb327702dacb0c41222d7e5da43bb" class="img-fluid img-responsive" width="15%">
+				<h4 style="color: bold black;" class="text-center">Join the Moment</h4>
+				<h5 class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua.  </h5></div>
+
+		<div class="col-sm-4 services_column">
+			<img src="https://cdn-icons-png.flaticon.com/512/6998/6998826.png"class="img-fluid img-responsive" width="15%">
+			<h4 class="text-center">Upload Your Story</h4>
+			<h5 class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad </h5></div>
+		
+		<div class="col-sm-4 services_column">
+			<img src="https://cdn-icons-png.flaticon.com/512/92/92353.png"class="img-fluid img-responsive" width="15%"  >
+			<h4 class="text-center">Enjoy The Interview Series</h4>
+			<h5 class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. </h5>
+		</div>
+		</div>
+		<br>
+		<br>
+		<hr>
+		<br><br>
+		
+	
+	<!--posts-->\
+
+	<p>
+  		<a class="btn btn-primary" data-bs-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" 		aria-controls="multiCollapseExample1">Posts</a>
+  		<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Articles</button>
+  		<button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#multiCollapseExample3" aria-expanded="false" aria-controls="multiCollapseExample3">Videos</button>
+</p>
+		<div class="row">
+  		<div class="col-sm-4">
+    		<div class="collapse multi-collapse" id="multiCollapseExample1">
+      		<div class="card card-body">
+        		<h1>Posts</h1>
+        		<img src="https://images.unsplash.com/photo-1531427186611-ecfd6d936c79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fHByb2ZpbGUlMjBkcHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=400&q=60"class="img-fluid img-responsive" width="10%", height="5%">
+        		<h4>Richel Donsiel</h4>
+        		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        		consequat. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+        		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+        		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+        		proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+        <div class="row">
+        		<img src="https://images.unsplash.com/photo-1584445584400-1a7cc5de77ae?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Y2VydGlmaWNhdGV8ZW58MHx8MHx8&auto=format&fit=crop&w=400&q=60" class="img-fluid img-responsive"width="10%", height="2%">
+         	</div>
+  			</div>
+   	 	</div>
+  	</div>
+
+  	<div class="col-sm-4">
+    	<div class="collapse multi-collapse" id="multiCollapseExample2">
+      	<div class="card card-body">
+      		<h2>Article Section</h2><br>
+      		<h3>Growth of Technology </h3>
+			        <p>Some placeholder content for the second collapse component of this multi-collapse example. This panel is hidden by default but revealed when the user activates the relevant trigger.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p><br>
+        			<a href="#" class="showmore_link">Show More</a>
+      			</div>
+    			</div>
+  			</div>
+			</div>
+
+				<br><br>
+		<div class="article_section">
+			<h2> Some recommended articles...</h2><br></div><br><br>
+     	<h3>Growth of Technology </h3>
+ 		<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+  	<div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://static01.nyt.com/images/2016/02/21/magazine/21onmoney1/21onmoney1-superJumbo.jpg" width="500px" height="300px" alt="...">
+    </div>
+  
+    <div class="carousel-item">
+      <img src="https://cdn-images-1.medium.com/max/2000/1*FcEdDKZDRbNjnbpwMCOhkA.jpeg" width="500px" height="300px"alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="https://comptiacdn.azureedge.net/webcontent/images/default-source/researchreports/it-industry-outlook-2022/report-chart-2_the-global-technology-industry--$5-3-trillion_.jpg?sfvrsn=97c46807_2" width="500px" height="300px"class="d-block w-100" alt="...">
+    </div>
+  	</div>
+		</div> <br>
+       
+       		<p>Some placeholder content for the second collapse component of this multi-collapse example. This panel is hidden 	by default but revealed when the user activates the relevant trigger.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+		      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		     	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		      cillum dolore eu fugiat <br><br>nulla pariatur. Excepteur sint occaecat cupidatat non
+		      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetuadipisicing elit, sed do eiusmod
+		      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+		      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+		      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+		      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+		      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetuadipisicing elit, sed do eiusmod</p>
+         		<a href="#" class="show_link">Show More</a>
+         		<br>
+         		<br>
+						<br>
+						<hr style="border: 1.5px black;"><br>
+
+						<h2>Stories section</h2><br><br>
+						<br><br><br>
+		<div class="row">
+			<div class="col-sm-12">
+				<iframe width="360" height="215" src="https://www.youtube.com/embed/Ov4MXWKMxjE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe><br><br>
+				<h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit </h6><h4>-By Rovin Dicosta</h4>
+			</div>
+	</div>
+		<br><br><br><br>
+	<div class="row">
+	<div class="col-sm-12">
+		<iframe width="360" height="215" src="https://www.youtube.com/embed/YC6sr5QWG04" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<br><br>
+				<h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. </h6><h4>-By Jiahn Sarvantaki</h4>
+		</div>
+	</div>
+			<a href="#" class="showmore_link2">Show More</a>
+				<br><br><hr><br><br>
+	<div class="row">
+			<div class="col-sm-12">
+			<img src="https://media.istockphoto.com/vectors/people-greeting-gesture-flat-vector-illustrations-set-different-vector-id1206031687?k=20&m=1206031687&s=612x612&w=0&h=YqnLjUUtIETqSBvYgyhun5nn6H9X6GKxGEsilN1J2g4=" width="800px" height="400px"></div></div>
+  
+  <div class="text-block"></div><br>
+  	<h3> Hey!	if you enjoy what you read here, you may like to join, then start joining now and be a part of our community!!</h3><br>
+  <div class="d-grid gap-2">
+  	<button class="btn btn-primary" type="button" >Join Now</button>
+
+	</div>
+
+
+		<!--Footer-->
+
+
+		<footer>
+  		<div class="row">
+   		 <div class="col-sm-4">
+      		<img src="logo1.png" class="img-fluid img-responsive" width="250px" height="250px">
+    		</div>
+   	 <div class="col-sm-4">
+      	<h2 style="font size: 30px;">Links</h2>
+      	<hr style="border: 2px #FFFFFF;" width="210%">
+     	<a href="#" class="footer_link">Help Center</a><br>
+        	<a href="#" class="footer_link">privacy policy</a> <br>
+        	<a href="#" class="footer_link">Terms & conditions</a>
+    
+    	</div>
+      	<div class="col-sm-4 "></div>
+      	<h2 style="font size: 30px;">contact Us</h2>
+      	<hr style="border: 2px #FFFFFF; ">
+        <p> phone: 0000000000</p>
+        <p> Email: ExploreMyself@org.com</p>
+      </div>
+      	<p style="text-align: center;">Copyright &copy; Explore Myself 2022. All rights reserved.</p>
+      	<p style="text-align: center;">Made with &hearts; & support, in India</p>
+		</footer>
+    		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous" ></script>
+
+
+		</body>
