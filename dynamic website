@@ -1,0 +1,774 @@
+DATABASE STORAGE CODE
+
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Generation Time: Nov 15, 2023 at 08:28 AM
+-- Server version: 10.4.28-MariaDB
+-- PHP Version: 8.2.4
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Database: `newmystore`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `brands`
+--
+
+CREATE TABLE `brands` (
+  `brand_id` int(11) NOT NULL,
+  `brand_title` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `brands`
+--
+
+INSERT INTO `brands` (`brand_id`, `brand_title`) VALUES
+(1, 'puma'),
+(2, 'adidas'),
+(3, 'nike'),
+(4, 'jordans'),
+(5, 'air nike');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `category`
+--
+
+CREATE TABLE `category` (
+  `category_id` int(11) NOT NULL,
+  `category_title` varchar(200) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `category`
+--
+
+INSERT INTO `category` (`category_id`, `category_title`) VALUES
+(1, ' tops'),
+(2, ' dresses'),
+(3, ' tops'),
+(4, ' jeans'),
+(5, ' sweaters'),
+(6, ' ribbed jeans'),
+(7, ' shirt');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `products`
+--
+
+CREATE TABLE `products` (
+  `product_id` int(11) NOT NULL,
+  `product_title` varchar(255) NOT NULL,
+  `product_description` varchar(255) NOT NULL,
+  `product_keywords` varchar(255) NOT NULL,
+  `category_id` int(11) NOT NULL,
+  `brand_id` int(11) NOT NULL,
+  `product_image1` varchar(255) NOT NULL,
+  `product_image2` varchar(255) NOT NULL,
+  `product_image3` varchar(255) NOT NULL,
+  `product_price` varchar(255) NOT NULL,
+  `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `status` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `products`
+--
+
+INSERT INTO `products` (`product_id`, `product_title`, `product_description`, `product_keywords`, `category_id`, `brand_id`, `product_image1`, `product_image2`, `product_image3`, `product_price`, `date`, `status`) VALUES
+(1, 'printed tops', 'printed tops to be worn during summer season', ' printed tops, tops, puma,women', 1, 1, 'prod1.jpeg', 'prod2.jpeg', 'prod3.jpeg', '500', '2023-11-12 15:45:11', 'true');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `brands`
+--
+ALTER TABLE `brands`
+  ADD PRIMARY KEY (`brand_id`);
+
+--
+-- Indexes for table `category`
+--
+ALTER TABLE `category`
+  ADD PRIMARY KEY (`category_id`);
+
+--
+-- Indexes for table `products`
+--
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`product_id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `brands`
+--
+ALTER TABLE `brands`
+  MODIFY `brand_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `category`
+--
+ALTER TABLE `category`
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
+-- AUTO_INCREMENT for table `products`
+--
+ALTER TABLE `products`
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+COMMIT;
+
+
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+HOMEPAGE CODE
+
+  <?php
+
+include('includes/connect.php');
+include('functions/common_function.php');
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- bootstrap css link-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <!-- font awesome link-->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <LINK rel="stylesheet" href="style-homepage.css">
+    <style>
+        body{
+            magin:0;
+        }
+        nav{
+            margin:0;
+
+        }
+        ul.main{
+            list-style-type:none;
+            padding:5px;
+            margin:0;
+            background-color:#3A9BDC;
+            text-align:center;
+
+        }
+        form.d-flex{
+          list-style-type:none;
+          padding:5px;
+            margin:0;
+            background-color:#3A9BDC;
+            text-align:center;
+        }
+        li{
+            display:inline;
+            font-size:0.5cm;
+            font-family:Arial;
+            line-height:55px;
+        }
+        li a{
+            text-decoration:none;
+            color:black;
+            padding:20px 40px;
+        }
+        li a:hover{
+            background-color:;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+      <!-- bootstrap js link-->
+    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <nav>
+       <ul class="main">
+        <li><a href="homepage.php">Home</a></li>
+        <li><a href="display_all.php">Product</a></li>
+        <li><a href="cart.php">Cart<?php
+        cart_items();?></a></li>
+        <li><a href="#">Total price:<?php
+        total_cart_price();?>/-</a></li>
+       </ul>
+       <form class="d-flex" action="search_product.php" method="get">
+        <input class="form-control me-2" type="search" placeholder="Search" arial-label="Search" name="search_data">
+        <input type="submit" value="Search" class="btn btn-outline-light" name="search_data_product">
+       </form>
+    </nav>
+<!--calling cart function-->
+        <?php
+        cart();
+        ?>
+ <!-- second child
+ <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+    <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="#">welcome guest</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="#">login</a>
+        </li>
+
+    </ul>
+
+ </nav>
+ -->
+  <!-- third child-->
+
+
+
+    <div class="row px-1">
+        <div class="col-md-10">
+            <!-- products-->
+           <div class="row">
+            <!-- fetching products-->
+
+             <?php
+           getproducts();
+           
+            ?> 
+     
+ <!-- row end-->
+  </div>
+  <!-- col end-->
+</div>
+            
+        <div class="col-md-2 bg-secondary p-0">
+            <!-- brands to be displayed-->
+            <ul class="navbar-nav me-auto text-center">
+                <li class="nav-item bg-info">
+                  <a href="#" class="nav-link text-light"><h4>Delivery brands</h4></a>  
+                </li>
+                <?php
+                  getbrands();
+                
+                ?>
+                  
+                </li>
+            </ul>
+
+
+             <!-- categories to be displayed-->
+             <ul class="navbar-nav me-auto text-center">
+                <li class="nav-item bg-info">
+                  <a href="#" class="nav-link text-light"><h4>Categories</h4></a>  
+                  <?php
+                  getcategory();
+                ?>
+                </li>
+            </ul>
+            
+            
+        </div>  
+        <?php
+                
+                search_product();
+                 get_unique_categories();
+                 get_unique_brands();
+                 //$ip = getIPAddress();  
+                 //echo 'User Real IP Address - '.$ip;    
+
+                ?>
+                
+    </div>
+
+       <!-- last child-->
+       <!--include footer--->
+        <?php include("./includes/footer.php")?>
+</body>
+</html>
+
+/*....CSS PART....*/
+
+      *{
+    margin:0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.main{
+position:absolute;
+top: 0;
+left: 0;
+width:100%;
+min-height: 100vh;
+background-image: url("images/mp2.jpg");
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+z-index: -1;
+filter: blur(4px);
+
+}
+.header{
+    position:fixed;
+    top: 0;
+    left:0;
+    width:100%;
+    padding: 20px 100px;
+    background: rgba(59, 58, 58, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.logo{
+    padding: 20px 50px;
+    width: 20px;
+}
+.content{
+    
+    margin-top: 180px;
+    text-align: center;
+    
+}
+.content h1{
+    color:#be3737;
+    font-size:60px;
+    margin-bottom:10px;
+}
+.content p{
+    color:#0c0c0c;
+    font-size:35px;
+}
+.navbar a{
+    color: #be3737;
+    text-decoration: none;
+    font-size: 15px;
+    margin-left: 35px; 
+    font-weight: bold;   
+}
+.navbar a:hover{
+    color:#fff;
+}
+.search-container{
+    filter: blur(0px);
+    margin-top: 2px;
+    height: 15px;
+    width: 350px;
+    border-radius: 50px;
+    padding: 18px 25px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.8s;
+    
+  box-shadow:  4px 4px 6px 0 rgba(255,255,255,.3),
+              -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+    inset -4px -4px 6px 0 rgba(255,255,255,.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, .2);
+}
+
+.search-container:hover > .search-input{
+    width: 400px;
+}
+.se{
+    padding-left: 0px;
+    padding-top:-20px;
+    
+}
+
+.search-container .search-input{
+    background: transparent;
+    border: none;
+    outline:none;
+    width: 0px;
+    font-weight: 400;
+    font-size: 16px;
+    transition: 0.8s;
+
+}
+
+.search-container .search-btn .fas{
+    color: #0f0f0f;
+}
+
+div.gallery {
+    margin: 60px;
+    border: 1px solid #ccc;
+    float: left;
+    width: 360px;
+    padding: 12px 15px;
+    row-gap: 50px;
+  }
+  
+  div.gallery:hover {
+    border: 1px solid #777;
+  }
+  
+  div.gallery img {
+    width: 100%;
+    height: auto;
+    
+  }
+  
+  div.desc {
+    padding: 15px;
+    text-align: center;
+    font-family: sans-serif;
+  }
+
+button{
+    padding: 2px;
+    width: 50%;
+    background-color: #570303;
+    font: size 2px;
+    color: #fff;
+}
+desc{
+    font-family: sans-serif;
+}
+.footer{
+    background-color: rgb(195, 142, 150);
+    text-decoration: none;
+}
+.footer ul{
+    color: #0f0f0f;
+    text-align: center;
+}
+.footer .logo{
+ align-items: right;
+
+}
+
+
+
+.card-img-top{
+
+    width:100%;
+    height:200px;
+    object-fit:contain;
+}
+
+.logo{
+    width:7%;
+    height:7%;
+}
+.admin_image{
+    width:100x;
+    object-fit:contain;
+
+}
+
+
+.name {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Ensure the container covers the entire viewport height */
+    background-color:pink;
+}
+
+/* Style the input box (optional) */
+input {
+    padding: 10px;
+    width: 200px;
+    border: 2px solid #333; /* Add a border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #f0f0f0; /* Background color */
+    background:white; /* Text color */
+    
+}
+
+#name.error-msg{
+    margin:10px 0;
+    display: block;
+    background:crimson;
+    color:#fff;
+    border-radius:5px;
+    font-size:20px;
+    padding-top:10px;
+    
+}
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding:14px 20px;
+    display: flex;
+    background: rgb(235, 221, 231);
+    text-decoration: none;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+
+}
+.logo{
+    
+    width: 250px;
+    height: 200px;
+}
+
+.top1{
+    padding-top: 80px;
+    padding-inline-start: 2px;
+    background-color:rgb(255, 255, 255);
+    column-width: 500px;
+}
+
+ul{
+    background-color: black;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    
+    
+}
+li a{
+
+    color: white;
+    align-items: center;
+    ori
+}
+.body
+{
+    margin: 0;
+    padding: 0;
+    background-color: #b2e0df;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items :center;
+}
+
+.search-container{
+    background: #fff;
+    margin-top: 50px;
+    height: 30px;
+    border-radius: 30px;
+    padding: 25px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.8s;
+    
+  box-shadow:  4px 4px 6px 0 rgba(255,255,255,.3),
+              -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+    inset -4px -4px 6px 0 rgba(255,255,255,.2),
+    inset 4px 4px 6px 0 rgba(0, 0, 0, .2);
+}
+
+.search-container:hover > .search-input{
+    width: 400px;
+}
+
+.search-container .search-input{
+    background: transparent;
+    border: none;
+    outline:none;
+    width: 0px;
+    font-weight: 500;
+    font-size: 16px;
+    transition: 0.8s;
+
+}
+
+.search-container .search-btn .fas{
+    color: #5cbdbb;
+}
+
+
+
+.search-container:hover{
+  animation: hoverShake 0.15s linear 3;
+}
+
+
+nav.name{
+    text-align: left;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:boredr-box;
+}
+
+/*.....DISPLAY ALL....*/
+
+<?php
+
+include('includes/connect.php');
+include('functions/common_function.php');
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- bootstrap css link-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <!-- font awesome link-->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <LINK rel="stylesheet" href="style-homepage.css">
+    <style>
+        body{
+            magin:0;
+        }
+        nav{
+            margin:0;
+
+        }
+        ul.main{
+            list-style-type:none;
+            padding:5px;
+            margin:0;
+            background-color:#3A9BDC;
+            text-align:center;
+
+        }
+        form.d-flex{
+          list-style-type:none;
+          padding:5px;
+            margin:0;
+            background-color:#3A9BDC;
+            text-align:center;
+        }
+        li{
+            display:inline;
+            font-size:0.5cm;
+            font-family:Arial;
+            line-height:55px;
+        }
+        li a{
+            text-decoration:none;
+            color:black;
+            padding:20px 40px;
+        }
+        li a:hover{
+            background-color:;
+            color:white;
+        }
+    </style>
+</head>
+<body>
+      <!-- bootstrap js link-->
+    
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <nav>
+       <ul class="main">
+        <li><a href="homepage.php">Home</a></li>
+        <li><a href="display_all.php">Product</a></li>
+        <li><a href="#">Cart</a></li>
+       
+      
+       </ul>
+       <form class="d-flex" action="search_product.php" method="get">
+        <input class="form-control me-2" type="search" placeholder="Search" arial-label="Search" name="search_data">
+        <input type="submit" value="Search" class="btn btn-outline-light" name="search_data_product">
+       </form>
+    </nav>
+
+ <!-- second child
+ <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+    <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="#">welcome guest</a>
+        </li><li class="nav-item">
+            <a class="nav-link" href="#">login</a>
+        </li>
+
+    </ul>
+
+ </nav>
+ -->
+  <!-- third child-->
+
+
+
+    <div class="row px-1">
+        <div class="col-md-10">
+            <!-- products-->
+           <div class="row">
+            <!-- fetching products-->
+
+             <?php
+           get_all_products();
+           
+            ?> 
+     
+ <!-- row end-->
+  </div>
+  <!-- col end-->
+</div>
+            
+        <div class="col-md-2 bg-secondary p-0">
+            <!-- brands to be displayed-->
+            <ul class="navbar-nav me-auto text-center">
+                <li class="nav-item bg-info">
+                  <a href="#" class="nav-link text-light"><h4>Delivery brands</h4></a>  
+                </li>
+                <?php
+                  getbrands();
+                
+                ?>
+                  
+                </li>
+            </ul>
+
+
+             <!-- categories to be displayed-->
+             <ul class="navbar-nav me-auto text-center">
+                <li class="nav-item bg-info">
+                  <a href="#" class="nav-link text-light"><h4>Categories</h4></a>  
+                  <?php
+                  getcategory();
+                ?>
+                </li>
+            </ul>
+            
+            
+        </div>  
+        <?php
+                
+                search_product();
+                 get_unique_categories();
+                 get_unique_brands();
+                
+
+                ?>
+                
+    </div>
+
+       <!-- last child-->
+       <?php include("./includes/footer.php")?>
+</body>
+</html>
